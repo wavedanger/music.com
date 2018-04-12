@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Login</title>
+	<style type="text/css">
+		*{margin:0px;padding:0px;}
+		body{
+			background:url("images/login_back2.jpg");
+			background-size:cover;
+		}
+		#login{
+			width:400px;
+			height:400px;
+			position:absolute;
+			background-color:rgba(0,0,0,0.4);
+			color:yellow;
+			}
+			#title{
+				display:block;
+				width:300px;
+				font-size:64px;
+				color:yellow;
+				border-bottom:1px solid yellow;
+				margin:20px auto;
+				text-align:center;
+			}
+			.textname{
+				color:yellow;
+				font-size:30px;
+				width:300px;
+				display:block;
+				margin:20px auto;
+			}
+			#name,#password,#blogin{
+				height:30px;
+				width:100%;
+				font-size:28px;
+				background-color:rgba(0,0,0,0.4);
+				border:1px solid blue;
+				color:yellow;
+			}
+			#name:focus,#password:focus{
+				outline:none;
+				border:1px solid green;
+			}
+			#blogin:hover{
+				border:1px solid green;
+				color:green;
+			}
+			#blogin{
+				cursor:pointer;
+				height:40px;
+				width:302px;
+			}
+			.sign{
+				font-size:20px;
+				width:300px;
+				display:block;
+				margin:20px auto;
+				text-align:center;
+			}
+			.sign a{
+				text-decoration:none;
+				padding:5px;
+				color:yellow;
+			}
+			#register{
+				border-right:2px solid yellow;
+			}
+			.sign a:hover{
+				color:green;
+			}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var loginwh=document.getElementById("login");
+			var loginw=loginwh.offsetWidth;
+			var loginh=loginwh.offsetHeight;
+			var w=window.innerWidth;
+			var h=window.innerHeight;
+			loginwh.style.left=(w-loginw)/2+"px";
+			loginwh.style.top=(h-loginh)/2+"px";
+		}
+		var t=5;
+		function timedao(){
+			if(t==0){
+				alert("很抱歉，该平台应涉及非法活动，已暂停运营！！！");
+				clearInterval(timer);
+			}
+			document.getElementById("login").innerHTML='<h1>'+t+"秒后自动跳转！！！"+'</h1>';
+			t--;
+		}
+		function onLogin(){
+			var n=document.getElementById("name");
+			var p=document.getElementById("password");
+			if((n.value=="洪蔚彬")&&(p.value=="123456")){
+				alert("登录成功！！！");
+				var timer=setInterval("timedao()",1000);
+			}
+			else if(n.value==""){
+				alert("用户名不能为空！！！");
+			}
+			else if(p.value==""){
+				alert("密码不能为空！！！");
+			}
+			else if(n.value!="洪蔚彬"){
+				alert("该用户不存在！！！");
+			}
+			else if(p.value!="123456"){
+				alert("密码错误！！！");
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="login">
+		<span id="title">LOGIN</span>
+		<form action="" method="post">
+			<span class="textname">Username:<input type="text" id="name"/></span>
+			<span class="textname">Password:<input type="password" id="password"/></span>
+			<span class="textname"><input type="button" id="blogin" value="LOGIN" onclick="onLogin()"/></span>
+			<span class="sign"><a href="javascript:void(0);" id="register">sign up</a><a href="javascript:void(0);" id="forget">forget password</a></span>
+		</form>
+	</div>
+</body>
+</html>

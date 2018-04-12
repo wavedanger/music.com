@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>音乐播放器</title>
+  <style type="text/css">
+  	*{
+  		margin:0px;
+  		padding:0px;
+  		font-size:24px;
+  	}
+  	body{
+  		background:url("audios/audio.jpg");
+  		background-repeat:no-repeat;
+  		background-attachment: fixed;
+  		background-size:100% 100%;
+  	}
+  	#title{
+  		color:rgba(0,0,255,0.8);
+  		width:440px;
+  		text-align:center;
+  		margin:0px auto;
+  		margin-top:20px;
+  		font-size:54px;
+  	}
+  	#main{
+  		width:440px;
+  		height:440px;
+  		border:1px solid rgba(255,255,255,0.5);
+  		border-radius:15px;
+  		background-color:rgba(0,0,0,0.7);
+  		margin:0 auto;
+  		margin-top:10px;
+  	}
+    #bg{
+      position:fixed;
+      width:100px;
+      background-color:rgba(0,0,0,0.5);
+      border:1px solid rgba(0,0,255,0.8);
+      right:150px;
+      top:10px;
+      border-radius:15px;
+      cursor:pointer;
+      color:blue;
+      text-align:center;
+    }
+    #bg:hover{
+       border:1px solid rgba(0,255,255,0.8);
+       color:rgba(0,255,255,0.8);
+    }
+  	#musicTop{
+  		font-size:28px;
+  		color:rgba(0,0,255,0.8);
+  		width:400px;
+		margin:0 auto;
+		margin-top:20px;
+  	}
+  	#musicTop audio{
+  		margin-top:10px;
+  		width:400px;
+  	}
+  	#musicMiddle{
+  		color:rgba(0,0,255,0.8);
+  		width:400px;
+		margin:0 auto;
+		margin-top:40px;
+  	}
+  	#musicMiddle span{
+  		font-size:28px;
+  	}
+  	#musicMiddle select{
+  		width:400px;
+  		outline:none;
+  		cursor:pointer;
+  		background-color:rgba(0,0,255,0.2);
+  		color:white;
+  		border:1px solid rgba(255,255,255,0.2);
+  	}
+  	#musicBottom{
+  		color:rgba(255,0,255,0.8);
+  		width:420px;
+		margin:0 auto;
+		margin-top:60px;
+  	}
+  	#musicBottom input{
+  		padding:3px;
+  		border:none;
+  		color:white;
+  		outline:none;
+  		cursor:pointer;
+  		background-color:rgba(0,0,255,0.2);
+  	}
+
+  	#musicBottom input:hover{
+  		background-color:rgba(255,255,0,0.2);
+  	}
+  </style>
+  <script type="text/javascript">
+  		var time=0;
+      var mark=0;
+  		window.onload=function(){
+  			var nowplay=document.getElementById("musicTitle");
+  			nowplay.innerHTML="丢火车乐队 - 晚安.mp3";
+  			var select=document.getElementById("musicList");
+  			select.options[0].selected=true;
+  		}
+      function changebg(){
+        var b=document.getElementsByTagName("body");
+        if(mark==0){
+          b[0].style.backgroundImage="url(audios/audio2.jpg)";
+          mark=1;
+        }
+        else if(mark==1){
+          b[0].style.backgroundImage="url(audios/audio.jpg)";
+          mark=0;
+        }
+      }
+  		function rbf(){
+		 var audio = document.getElementById("musicPlayer"); 
+		 audio.currentTime = 0;
+		}
+		function bf(){
+		 var audio = document.getElementById("musicPlayer");
+		 var select=document.getElementById("musicList");
+		 var nowplay=document.getElementById("musicTitle");
+		 var index=select.selectedIndex;
+		 nowplay.innerHTML=select.options[index].value;
+     nowplay.innerHTML=nowplay.innerHTML.substr(7,20);
+		 audio.src=select.options[index].value;
+		 audio.currentTime=time;
+		 audio.play();
+		}
+		function zt(){
+		 var audio = document.getElementById("musicPlayer");                 
+		 audio.pause();
+		 time=audio.currentTime;
+		}
+		function pre(){
+			var audio = document.getElementById("musicPlayer");
+			 var select=document.getElementById("musicList");
+			 var nowplay=document.getElementById("musicTitle");
+			 var index=select.selectedIndex;
+			 if(index>0){
+			 	audio.src=select.options[index-1].value;
+			 	nowplay.innerHTML=select.options[index-1].value;
+        nowplay.innerHTML=nowplay.innerHTML.substr(7,20);
+			 	select.options[index-1].selected=true;
+			 	select.options[index].selected=false;
+			}
+			else{
+				audio.src=select.options[index].value;
+			}
+			audio.play();
+		}
+		function next(){
+			var audio = document.getElementById("musicPlayer");
+			 var select=document.getElementById("musicList");
+			 var nowplay=document.getElementById("musicTitle");
+			 var index=select.selectedIndex;
+			 if(index<select.options.length){
+			 	audio.src=select.options[index+1].value;
+			 	nowplay.innerHTML=select.options[index+1].value;
+         nowplay.innerHTML=nowplay.innerHTML.substr(7,20);
+			 	select.options[index+1].selected=true;
+			 	select.options[index].selected=false;
+			}
+			else{
+				audio.src=select.options[index].value;
+			}
+			audio.play();
+		}
+  </script>
+ </head>
+ <body>
+ 	<div id="title">MusicPlayer</div>
+  	<div id="main">
+    <div id="bg" onclick="changebg()">
+      切换
+    </div>
+	<div id="musicTop">
+	<span>正在播放：</span><div id="musicTitle"></div>
+	<audio  id="musicPlayer" controls="controls" autoplay="autoplay">
+		<source src="audios/丢火车乐队 - 晚安.mp3" />
+	</audio>
+	</div>
+	<div id="musicMiddle">
+		<span>音乐列表：</span><br/>
+		<select multiple="true" id="musicList">
+			<option value="audios/丢火车乐队 - 晚安.mp3">丢火车乐队 - 晚安.mp3</option>
+      <option value="audios/丢火车-白兰鸽巡游记.mp3">丢火车-白兰鸽巡游记.mp3</option>
+			<option value="audios/郭旭 - 不找了.mp3">郭旭 - 不找了.mp3</option>
+			<option value="audios/五月天 - 洋葱.mp3">五月天 - 洋葱.mp3</option>
+			<option value="audios/赵浴辰 - 可乐.mp3">赵浴辰 - 可乐.mp3</option>
+		</select>
+	</div>
+	<div id="musicBottom">
+		<input type="button" value="上一首" onclick="pre()"/>
+		<input type="button" value="下一首" onclick="next()"/>
+		<input type="button" value="播放" onclick="bf()"/>
+		<input type="button" value="暂停" onclick="zt()"/>
+		<input type="button" value="重新播放" onclick="rbf()"/>
+	</div>
+  </div>
+ </body>
+</html>

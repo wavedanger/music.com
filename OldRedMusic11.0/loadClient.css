@@ -1,0 +1,237 @@
+*{
+			padding:0px;
+			margin:0px;
+		}
+		body,textarea,select,input,button
+		{	font-size:14px; 
+			color:#333; 
+		}
+		html,body{
+			width:100%;
+			height:100%;
+			border:0px;
+		}
+		.clear{
+			clear:both;
+		}
+		#main{
+			background-color:white;
+			width:1580px;
+		}
+		#backTop{
+			position:fixed;
+			bottom:100px;
+			right:30px;
+			/*z-index:20;*/
+		}
+		#top{
+			height:70px;
+		}
+		#title{
+			height:70px;
+			line-height:70px;
+			padding-left:8%;
+			background-image:url("images/title.png");
+		}
+		#title img{
+			float:left;
+			margin:15px 10px 0px 100px;
+		}
+		#title ul li{
+			float:left;
+			list-style:none;
+			width:100px;
+			text-align:center;
+			background:url("images/fen.png") no-repeat right;
+		}
+		#title ul li a:hover{
+			color:white;
+			background-color:black;
+			border-radius:10px;
+			padding:10px 10px;	
+		}
+		#title ul li.meifen{
+			background:none;
+		}
+		#title h1{
+			float:left;
+			margin-right:20px;
+		}
+		#title a{	
+			color:white;
+			text-decoration:none;
+		}
+		#sousuo{
+			float:left;
+			width:240px;
+			margin-left:40px;
+		}
+		#input{
+			width:180px;
+			font-size:12px;
+			border-radius:40px;
+			height:25px;
+			background-color:#eaeaea;
+			outline:none;
+		}
+		#go{
+			height:25px;
+			border:none;
+			background:none;
+			color:grey;
+			padding-left:10px;
+			cursor:pointer;
+			outline:none;
+		}
+		#middle{
+			width:100%;
+			background:url("images/loadClient_n1.jpg") no-repeat;
+		}
+		#nav1{
+			width:100%;
+			height:485px;
+			background-color:rgba(0,0,0,0.8);
+		}
+		#nav1left{
+			position:relative;
+        	z-index:0;
+			width:685px;
+			height:485px;
+			float:left;
+			margin-left:150px;
+			overflow:hidden;
+		}
+		#nav1right{
+			color:white;
+			width:485px;
+			float:left;
+			margin-left:100px;
+			margin-top:20px;
+		}
+		#nav1right p{
+			font-size:58px;
+			font-weight:bold;
+		}
+		#system{
+			/*border:1px solid red;*/
+			margin-top:20px;
+			font-size:18px;
+			border-spacing:20px;
+		}
+		#system tr td{
+			background-color:gray;
+			padding:10px;
+		}
+		#system tr td a{
+			color:white;
+			text-decoration:none;
+		}
+		#system tr td:hover{
+			background-color:#3f485a;
+		}
+		.image{
+			height:440px;
+			border-top:1px solid #b9b9b9;
+		}
+		.image table{
+			margin:20px auto;
+		}
+		.image h1{
+			font-size:38px;
+		}
+		#img2,#img4{
+			background-color:#f8f8f8;
+		}
+		#img1 tr td:nth-of-type(2){
+			background-image: url("images/loadClient_b1.jpg");
+		}
+		#img2 tr td:nth-of-type(1){
+			background-image: url("images/loadClient_b2.jpg");
+		}
+		#img3 tr td:nth-of-type(2){
+			background-image: url("images/loadClient_b3.jpg");
+		}
+		#img4 tr td:nth-of-type(1){
+			background-image: url("images/loadClient_b4.jpg");
+		}
+		#img5 tr td:nth-of-type(2){
+			background-image: url("images/loadClient_b5.jpg");
+		}
+		#bottom{
+			height:150px;
+			background-color:#f9f9f9;
+			border:1px solid #b9b9b9;
+		}
+		#plan img{
+			height:50px;
+			width:240px;
+		}
+		#plan{
+			float:left;
+			margin-top:40px;
+			margin-left:300px;
+		}
+		#about{
+			margin-top:40px;
+			margin-left:40px;
+			float:left;
+			width:400px;
+		}
+		#about a{
+			text-decoration:none;
+			color:gray;
+		}
+		#about span{
+			font:12px gray;
+		}
+		#about img{
+			width:74px;
+			height:22px;
+			margin-left:30px;
+		}
+    .imgList{
+      z-index: 1;
+     padding-left:155px;
+    }
+    .imgList li{
+      display:none;
+    }
+    .imgList .imgOn{
+      display:inline;
+    }
+    ul li{
+      list-style:none;
+    }
+    a{
+      text-decoration:none;
+    }
+    .infoList{
+      color:darkred;
+      font-size:24px;
+      position:absolute;
+      left:10px;
+      bottom:10px;
+      z-index:5;
+    }
+    .infoList li{
+      display:none;
+    }
+    .infoList .infoOn{
+      display:inline;
+    }
+    .indexList{
+      position:absolute;
+      right:40%;
+      bottom:20px;
+      z-index:5;
+    }
+    .indexList li{
+      padding:10px;
+      margin-right:10px;
+      border-radius:100px;
+      background:rgba(0,0,0,0.5);
+      float:left;
+    }
+    .indexList .indexOn{
+      background:red;
+    }

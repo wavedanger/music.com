@@ -1,0 +1,125 @@
+*{
+			padding:0px;
+			margin:0px;
+		}
+		body,textarea,select,input,button
+		{	font-size:14px; 
+			color:#333; 
+		}
+		html,body{
+			width:100%;
+			height:100%;
+			border:0px;
+		}
+		.clear{
+			clear:both;
+		}
+		#main{
+			background-color:#f5f5f5;
+			width:1580px;
+		}
+		#backTop{
+			position:fixed;
+			bottom:100px;
+			right:30px;
+			/*z-index:20;*/
+		}
+		#top{
+			height:70px;
+		}
+		#title{
+			height:70px;
+			line-height:70px;
+			padding-left:8%;
+			background-image:url("images/title.png");
+		}
+		#title img{
+			float:left;
+			margin:15px 10px 0px 100px;
+		}
+		#title ul li{
+			float:left;
+			list-style:none;
+			width:100px;
+			text-align:center;
+			background:url("images/fen.png") no-repeat right;
+		}
+		#title ul li a:hover{
+			color:white;
+			background-color:black;
+			border-radius:10px;
+			padding:10px 10px;	
+		}
+		#title ul li.meifen{
+			background:none;
+		}
+		#title h1{
+			float:left;
+			margin-right:20px;
+		}
+		#title a{	
+			color:white;
+			text-decoration:none;
+		}
+		#sousuo{
+			float:left;
+			width:240px;
+			margin-left:40px;
+		}
+		#input{
+			width:180px;
+			font-size:12px;
+			border-radius:40px;
+			height:25px;
+			background-color:#eaeaea;
+			outline:none;
+		}
+		#go{
+			height:25px;
+			border:none;
+			background:none;
+			color:grey;
+			padding-left:10px;
+			cursor:pointer;
+			outline:none;
+		}
+		#middle{
+			width:970px;
+			height:700px;
+			background-color:white;
+			margin:0 auto;
+			border:1px solid #b9b9b9;
+			background-image:url("images/mymusic_mainbg.png");
+		}
+		#bottom{
+			height:150px;
+			background-color:#f9f9f9;
+			border:1px solid #b9b9b9;
+		}
+		#plan img{
+			height:50px;
+			width:240px;
+		}
+		#plan{
+			float:left;
+			margin-top:40px;
+			margin-left:300px;
+		}
+		#about{
+			margin-top:40px;
+			margin-left:40px;
+			float:left;
+			width:400px;
+		}
+		#about a{
+			text-decoration:none;
+			color:gray;
+		}
+		#about span{
+			font:12px gray;
+		}
+		#about img{
+			width:74px;
+			height:22px;
+			margin-left:30px;
+		}
